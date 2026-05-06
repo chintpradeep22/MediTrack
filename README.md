@@ -112,6 +112,7 @@ Frontend runs on: **http://localhost:5173**
 | **SQL**      | Database               |
 | **JWT**          | Secure User Authentication   |
 | **React Toastify** | In-app Notifications      |
+| **Webhooks** | Real-time Event Notifications / Integrations      |
 
 ## 📱 Screenshots
 

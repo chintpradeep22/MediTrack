@@ -1,0 +1,739 @@
+{
+    "info": {
+        "_postman_id": "meditrack-api-collection",
+        "name": "MediTrack - Nurse Medication Reminder API",
+        "description": "Comprehensive API collection for the Nurse Medication Reminder system. Includes authentication, admin, and nurse endpoints.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "item": [
+                {
+                    "name": "Login as Admin",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"alice.admin\",\n    \"password\": \"admin123\",\n    \"role\": \"ADMIN\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/auth/login",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Login as Nurse (Anita)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"EMP001\",\n    \"password\": \"anita@123\",\n    \"role\": \"NURSE\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/auth/login",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Login as Nurse (Ravi)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"EMP002\",\n    \"password\": \"anita@123\",\n    \"role\": \"NURSE\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/auth/login",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Current User",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/auth/me",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "auth",
+                                "me"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Logout",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/auth/logout",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "auth",
+                                "logout"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Admin - Nurses",
+            "item": [
+                {
+                    "name": "Get All Nurses",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/nurses",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "nurses"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Assign Nurse to Floor",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/nurses/1/assign-floor/2",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "nurses",
+                                "1",
+                                "assign-floor",
+                                "2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Nurses by Floor",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/floors/1/nurses",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "floors",
+                                "1",
+                                "nurses"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Admin - Patients",
+            "item": [
+                {
+                    "name": "Get All Patients",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/patients",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "patients"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Assign Patient to Floor",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/patients/1/assign-floor/2",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "patients",
+                                "1",
+                                "assign-floor",
+                                "2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Patients by Floor",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/floors/1/patients",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "floors",
+                                "1",
+                                "patients"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Admin - Medications",
+            "item": [
+                {
+                    "name": "Get All Medications",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/medications",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "medications"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Add Medication to Patient",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"medicineName\": \"Aspirin\",\n    \"dosage\": \"100mg\",\n    \"instructions\": \"Take after breakfast\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/admin/medications/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "medications",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Medications by Patient",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/patients/1/medications",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "patients",
+                                "1",
+                                "medications"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Admin - Medication Schedules",
+            "item": [
+                {
+                    "name": "Get All Schedules",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/medication-schedules",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "medication-schedules"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Medication Schedule",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"scheduledTime\": \"2026-02-10T14:00:00\",\n    \"status\": \"PENDING\",\n    \"medicationId\": 1,\n    \"nurseId\": 1,\n    \"patientId\": 1\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/admin/medication-schedules",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "medication-schedules"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Medication Schedule",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"scheduledTime\": \"2026-02-10T15:00:00\",\n    \"status\": \"PENDING\",\n    \"medicationId\": 1,\n    \"nurseId\": 1,\n    \"patientId\": 1\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/admin/medication-schedules/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "medication-schedules",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Medication Schedule",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/medication-schedules/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "admin",
+                                "medication-schedules",
+                                "1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Nurse - Profile",
+            "item": [
+                {
+                    "name": "Get Nurse Profile",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/profile",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "profile"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Nurse Profile",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Anita Kumar\",\n    \"phoneNumber\": \"9876543210\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/profile",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "profile"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Nurse - Patients",
+            "item": [
+                {
+                    "name": "Get Patients in Nurse's Floor",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/patients",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "patients"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Patient Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/patients/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "patients",
+                                "1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Nurse - Medications",
+            "item": [
+                {
+                    "name": "Get All Medications for Floor",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/medications",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "medications"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Medications for Patient",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/patients/1/medications",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "patients",
+                                "1",
+                                "medications"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Nurse - Schedules",
+            "item": [
+                {
+                    "name": "Get Today's Schedules",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/schedules/today",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "schedules",
+                                "today"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Upcoming Schedules",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/schedules/upcoming",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "schedules",
+                                "upcoming"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Missed Schedules",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/schedules/missed",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "schedules",
+                                "missed"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Mark Medication as Given",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/schedules/1/mark-given",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "schedules",
+                                "1",
+                                "mark-given"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Mark Medication as Missed",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/schedules/1/mark-missed",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "schedules",
+                                "1",
+                                "mark-missed"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Nurse - Notifications",
+            "item": [
+                {
+                    "name": "Get Notifications",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/notifications",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "notifications"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Mark Notification as Read",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/nurse/notifications/1/read",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "nurse",
+                                "notifications",
+                                "1",
+                                "read"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

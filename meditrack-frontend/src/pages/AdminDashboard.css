@@ -1,0 +1,14 @@
+.dashboard-container {
+    padding: var(--spacing-xl);
+}
+
+.page-title {
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: var(--spacing-md);
+    }
+}

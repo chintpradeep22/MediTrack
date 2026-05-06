@@ -116,13 +116,10 @@ Frontend runs on: **http://localhost:5173**
 ## 📱 Screenshots
 
 ### Login Page
-![Login Page](![alt text](image.png))
-
-### Home Page
-![Home Page](https://res.cloudinary.com/de3tdd3db/image/upload/v1757254660/Screenshot_2025-09-07_194324_wo15dq.png)
+![alt text](image.png)
 
 ### Admin Dashboard
-![Categories Page](![alt text](image-1.png))
+![alt text](image-1.png)
 
 ### Nurse Dashboard
-![Cart Page](![alt text](image-2.png))
+![alt text](image-2.png)
